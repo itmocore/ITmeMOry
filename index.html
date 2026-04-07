@@ -1,3 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITMEMORY — История корпусов ИТМО</title>
+  <meta name="description" content="ITMEMORY — цифровой историко-архитектурный справочник о зданиях Университета ИТМО в Санкт-Петербурге. Проект студентов ИТМО.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======= НАВИГАЦИЯ ======= -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-badge">IT</div>
+        <div>
+          <div class="nav-logo-text">ITMEMORY</div>
+          <div class="nav-logo-sub">История корпусов ИТМО</div>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#map-section">Карта</a></li>
+        <li><a href="#timeline-section">Хронология</a></li>
+        <li><a href="#buildings-section">Корпуса</a></li>
+        <li><a href="#about-section">О проекте</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ======= HERO ======= -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">Проект ITMEMORY · Университет ИТМО</div>
+      <h1 class="hero-title">
+        История <em>корпусов</em><br>университета ИТМО
+      </h1>
+      <p class="hero-desc">
+        Цифровой историко-архитектурный справочник о зданиях ИТМО 
+        в Санкт-Петербурге. От Заемного банка Луиджи Руска до 
+        «2-го Дома городских учреждений» Перетятковича — каждое 
+        здание хранит свой слой петербургской истории.
+      </p>
+      <div class="hero-actions">
+        <a href="#map-section" class="btn btn-primary">Открыть карту</a>
+        <a href="#buildings-section" class="btn btn-secondary">Все корпуса →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Исторических корпусов</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">230+</div>
+          <div class="stat-label">Лет истории зданий</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">1930</div>
+          <div class="stat-label">Год основания ЛИТМО</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-map-preview">
+        <div id="hero-mini-map"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= КАРТА ======= -->
+  <section class="map-section" id="map-section">
+    <div class="container">
+      <div class="map-header">
+        <div class="section-label">Интерактивная карта</div>
+        <h2 class="section-title">Корпуса на карте<br>Санкт-Петербурга</h2>
+        <p class="section-desc">Нажмите на маркер, чтобы узнать краткую информацию о корпусе и перейти к его подробной истории.</p>
+      </div>
+      <div class="map-container">
+        <div id="main-map"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= ТАЙМЛАЙН ======= -->
+  <section class="timeline-section" id="timeline-section">
+    <div class="container">
+      <div class="section-label">Хронология</div>
+      <h2 class="section-title">Ключевые даты<br>в истории ИТМО</h2>
+      <p class="section-desc">От екатерининского Заемного банка и купеческих особняков XIX века — к национальному исследовательскому университету мирового уровня.</p>
+    </div>
+    <div class="timeline-wrapper">
+      <div class="timeline-track" id="timeline-track"></div>
+    </div>
+  </section>
+
+  <!-- ======= КАРТОЧКИ КОРПУСОВ ======= -->
+  <section class="buildings-section" id="buildings-section">
+    <div class="container">
+      <div class="section-label">Корпуса ИТМО</div>
+      <h2 class="section-title">Исторические здания<br>университета</h2>
+      <p class="section-desc">Пять зданий, пять архитектурных эпох — от классицизма Луиджи Руска до неоклассицизма начала XX века.</p>
+      <div class="buildings-grid" id="buildings-grid"></div>
+    </div>
+  </section>
+
   <!-- ======= О ПРОЕКТЕ ======= -->
   <section class="about-section" id="about-section">
     <div class="container">
