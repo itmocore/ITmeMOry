@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Корпус ИТМО — ITMEMORY</title>
+  <meta name="description" content="Подробная история корпуса ИТМО в Санкт-Петербурге — проект ITMEMORY.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .building-map-section { border-radius: 16px; overflow: hidden; height: 280px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); margin: 48px 0; }
+    #building-map { width: 100%; height: 100%; }
+    .role-block { background: var(--accent-light); border-radius: var(--radius); padding: 20px 24px; margin-top: 40px; display: flex; align-items: center; gap: 16px; }
+    .role-icon { font-size: 28px; flex-shrink: 0; }
+    .role-label { font-family: var(--font-mono); font-size: 10px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; margin-bottom: 4px; }
+    .role-text { font-size: 15px; font-weight: 600; color: var(--text); }
+    .page-credit { margin-top: 56px; padding: 20px 24px; background: var(--bg); border-radius: var(--radius); font-size: 13px; color: var(--text-muted); line-height: 1.6; border: 1px solid var(--border); }
+    .page-credit strong { color: var(--text); }
+  </style>
+</head>
+<body class="building-page">
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-badge">IT</div>
+        <div>
+          <div class="nav-logo-text">ITMEMORY</div>
+          <div class="nav-logo-sub">История корпусов ИТМО</div>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#map-section">Карта</a></li>
+        <li><a href="../index.html#buildings-section">Все корпуса</a></li>
+        <li><a href="../index.html#about-section">О проекте</a></li>
+        <li><a href="../index.html#authors-section">Авторы</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="building-hero">
+    <a href="../index.html" class="building-hero-back">← Все корпуса</a>
+    <div class="building-hero-content">
+      <div class="building-hero-tag" id="b-tag">Загрузка...</div>
+      <h1 class="building-hero-title" id="b-title">Загрузка...</h1>
+      <div class="building-hero-addr" id="b-addr"></div>
+    </div>
+  </div>
+
+  <div class="building-content">
+    <div class="building-facts-bar fade-up">
+      <div class="fact-item"><div class="fact-label">Год постройки</div><div class="fact-value" id="b-year">—</div></div>
+      <div class="fact-item"><div class="fact-label">Архитектурный стиль</div><div class="fact-value" id="b-style">—</div></div>
+      <div class="fact-item"><div class="fact-label">В составе ИТМО с</div><div class="fact-value" id="b-joined">—</div></div>
+    </div>
+
+    <div class="fade-up fade-up-delay-1">
+      <h2 class="building-history-title">История здания</h2>
+      <div id="b-history"></div>
+    </div>
+
+    <div class="building-map-section fade-up fade-up-delay-2">
+      <div id="building-map"></div>
+    </div>
+
+    <div class="building-facts-list fade-up fade-up-delay-2">
+      <h3>Интересные факты</h3>
+      <ul id="b-facts-list"></ul>
+    </div>
+
+    <div class="role-block fade-up fade-up-delay-3">
+      <div class="role-icon">🏛</div>
+      <div><div class="role-label">Роль сегодня</div><div class="role-text" id="b-role">—</div></div>
+    </div>
+
+    <div class="sources-block fade-up fade-up-delay-3">
+      <h3>Источники и литература</h3>
+      <ol id="b-sources"></ol>
+    </div>
+
+    <div class="building-nav-footer fade-up" id="building-nav"></div>
+
+    <!-- Авторство -->
+    <div class="page-credit fade-up">
+      Материал подготовлен в рамках проекта <strong>ITMEMORY</strong> — 
+      студенческой цифровой летописи корпусов Университета ИТМО. 
+      Санкт-Петербург, 2024–2025. 
+      Карты: © OpenStreetMap contributors, © CARTO.
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">ITMEMORY</div>
+        <div class="footer-text" style="margin-top:6px">Университет ИТМО · СПб, 2024–2025</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="../index.html">← На главную</a></li>
+        <li><a href="../index.html#authors-section">Авторы</a></li>
+        <li><a href="https://itmo.ru" target="_blank">itmo.ru ↗</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../js/building.js"></script>
+</body>
+</html>

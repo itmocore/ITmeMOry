@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITMEMORY — История корпусов ИТМО</title>
+  <meta name="description" content="ITMEMORY — цифровой историко-архитектурный справочник о зданиях Университета ИТМО в Санкт-Петербурге. Проект студентов ИТМО.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======= НАВИГАЦИЯ ======= -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-badge">IT</div>
+        <div>
+          <div class="nav-logo-text">ITMEMORY</div>
+          <div class="nav-logo-sub">История корпусов ИТМО</div>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#map-section">Карта</a></li>
+        <li><a href="#timeline-section">Хронология</a></li>
+        <li><a href="#buildings-section">Корпуса</a></li>
+        <li><a href="#about-section">О проекте</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ======= HERO ======= -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">Проект ITMEMORY · Университет ИТМО</div>
+      <h1 class="hero-title">
+        История <em>корпусов</em><br>университета ИТМО
+      </h1>
+      <p class="hero-desc">
+        Цифровой историко-архитектурный справочник о зданиях ИТМО 
+        в Санкт-Петербурге. От Заемного банка Луиджи Руска до 
+        «2-го Дома городских учреждений» Перетятковича — каждое 
+        здание хранит свой слой петербургской истории.
+      </p>
+      <div class="hero-actions">
+        <a href="#map-section" class="btn btn-primary">Открыть карту</a>
+        <a href="#buildings-section" class="btn btn-secondary">Все корпуса →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Исторических корпусов</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">230+</div>
+          <div class="stat-label">Лет истории зданий</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">1930</div>
+          <div class="stat-label">Год основания ЛИТМО</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-map-preview">
+        <div id="hero-mini-map"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= КАРТА ======= -->
+  <section class="map-section" id="map-section">
+    <div class="container">
+      <div class="map-header">
+        <div class="section-label">Интерактивная карта</div>
+        <h2 class="section-title">Корпуса на карте<br>Санкт-Петербурга</h2>
+        <p class="section-desc">Нажмите на маркер, чтобы узнать краткую информацию о корпусе и перейти к его подробной истории.</p>
+      </div>
+      <div class="map-container">
+        <div id="main-map"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= ТАЙМЛАЙН ======= -->
+  <section class="timeline-section" id="timeline-section">
+    <div class="container">
+      <div class="section-label">Хронология</div>
+      <h2 class="section-title">Ключевые даты<br>в истории ИТМО</h2>
+      <p class="section-desc">От екатерининского Заемного банка и купеческих особняков XIX века — к национальному исследовательскому университету мирового уровня.</p>
+    </div>
+    <div class="timeline-wrapper">
+      <div class="timeline-track" id="timeline-track"></div>
+    </div>
+  </section>
+
+  <!-- ======= КАРТОЧКИ КОРПУСОВ ======= -->
+  <section class="buildings-section" id="buildings-section">
+    <div class="container">
+      <div class="section-label">Корпуса ИТМО</div>
+      <h2 class="section-title">Исторические здания<br>университета</h2>
+      <p class="section-desc">Пять зданий, пять архитектурных эпох — от классицизма Луиджи Руска до неоклассицизма начала XX века.</p>
+      <div class="buildings-grid" id="buildings-grid"></div>
+    </div>
+  </section>
+
+  <!-- ======= О ПРОЕКТЕ ======= -->
+  <section class="about-section" id="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <div class="section-label">О проекте ITMEMORY</div>
+          <blockquote class="about-quote">
+            «Здания — это документы, в которых записана история 
+            так же, как в архивных папках»
+          </blockquote>
+          <p class="about-text">
+            <strong>ITMEMORY</strong> — студенческий исследовательский проект Университета ИТМО, 
+            посвящённый документированию архитектурной и исторической ценности зданий, 
+            в которых уже почти столетие развивается петербургская инженерная наука.
+          </p>
+          <p class="about-text">
+            Мы опирались на материалы городских архивов (ЦГИА СПб, РГИА), 
+            научные публикации по истории архитектуры Санкт-Петербурга 
+            и внутренние документы ИТМО.
+          </p>
+          <!-- Забавный факт о ЛИТМО -->
+          <div class="fun-fact">
+            <div class="fun-fact-icon">💬</div>
+            <div>
+              <div class="fun-fact-label">Народная этимология</div>
+              <div class="fun-fact-text">
+                Студенты расшифровывали аббревиатуру ЛИТМО как 
+                «Лошадь И Та Может Окончить» и «Лентяям И Тунеядцам Место Обеспечено». 
+                По свидетельствам выпускников — за 50 лет ничего не изменилось.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="about-card">
+            <div class="about-card-title">Методология проекта</div>
+            <ul class="method-list">
+              <li>
+                <div class="method-icon">🗂</div>
+                <div>Работа с фондами ЦГИА СПб и Центрального государственного архива</div>
+              </li>
+              <li>
+                <div class="method-icon">📖</div>
+                <div>Изучение научной литературы по истории петербургской архитектуры XIX–XX веков</div>
+              </li>
+              <li>
+                <div class="method-icon">🗣</div>
+                <div>Интервью с сотрудниками и выпускниками ИТМО, проработавшими в этих зданиях десятилетиями</div>
+              </li>
+              <li>
+                <div class="method-icon">📐</div>
+                <div>Натурное обследование зданий: анализ архитектурных деталей, стиля и сохранности исторических элементов</div>
+              </li>
+              <li>
+                <div class="method-icon">🌐</div>
+                <div>Сопоставление с открытыми базами данных объектов культурного наследия Санкт-Петербурга</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= АВТОРЫ ======= -->
+  <section class="authors-section" id="authors-section">
+    <div class="container">
+      <div class="section-label">Авторы проекта</div>
+      <h2 class="section-title">Команда ITMEMORY</h2>
+      <p class="section-desc">
+        Проект создан в рамках учебно-исследовательской программы<br>
+        <strong>Университета ИТМО</strong>, Санкт-Петербург, 2024–2025.
+      </p>
+      <div class="authors-grid" id="authors-grid">
+        <!-- Карточки авторов — замените на реальные имена -->
+        <div class="author-card">
+          <div class="author-avatar">Ф</div>
+          <div class="author-name">Фёдор</div>
+          <div class="author-role">Исследование и тексты</div>
+        </div>
+        <div class="author-card">
+          <div class="author-avatar">?</div>
+          <div class="author-name">Участник 2</div>
+          <div class="author-role">Дизайн и вёрстка</div>
+        </div>
+        <div class="author-card">
+          <div class="author-avatar">?</div>
+          <div class="author-name">Участник 3</div>
+          <div class="author-role">Архивные материалы</div>
+        </div>
+        <div class="author-card">
+          <div class="author-avatar">?</div>
+          <div class="author-name">Участник 4</div>
+          <div class="author-role">Фотосъёмка</div>
+        </div>
+      </div>
+      <div class="project-badge">
+        <div class="project-badge-logo">ITMEMORY</div>
+        <div class="project-badge-text">
+          Учебно-исследовательский проект<br>
+          <strong>Университет ИТМО</strong> · Санкт-Петербург · 2024–2025<br>
+          Данные карты: © OpenStreetMap contributors, © CARTO
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">ITMEMORY</div>
+        <div class="footer-text" style="margin-top:6px">
+          Цифровая летопись корпусов Университета ИТМО<br>
+          Студенческий исследовательский проект · СПб, 2024–2025
+        </div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#map-section">Карта</a></li>
+        <li><a href="#buildings-section">Корпуса</a></li>
+        <li><a href="#authors-section">Авторы</a></li>
+        <li><a href="https://itmo.ru" target="_blank">itmo.ru ↗</a></li>
+      </ul>
+      <div class="footer-text">
+        © ITMEMORY, 2024–2025<br>
+        Карты: OpenStreetMap · CARTO
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
